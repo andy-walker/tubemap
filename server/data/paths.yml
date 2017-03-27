@@ -1,0 +1,43 @@
+# Metropolitan line
+metropolitan:
+
+    Chalfont & Latimer - Amersham:              lul-metropolitan_940gzzluams_940gzzlucal
+    Chesham - Chalfont & Latimer:               lul-metropolitan_940gzzlucsm_940gzzlucal
+    Chalfont & Latimer - Chorleywood:           lul-metropolitan_940gzzlucal_940gzzlucyd
+    Chorleywood - Rickmansworth:                lul-metropolitan_940gzzlucyd_940gzzlurkw
+    Rickmansworth - Moor Park:                  lul-metropolitan_940gzzlurkw_940gzzlumpk
+    Croxley - Moor Park:                        lul-metropolitan_940gzzlucxy_940gzzlumpk
+    Watford - Croxley:                          lul-metropolitan_940gzzluwaf_940gzzlucxy
+    Moor Park - Northwood:                      lul-metropolitan_940gzzlumpk_940gzzlunow
+    Northwood - Northwood Hills:                lul-metropolitan_940gzzlunow_940gzzlunwh 
+    Northwood Hills - Pinner:                   lul-metropolitan_940gzzlunwh_940gzzlupnr
+    Pinner - North Harrow:                      lul-metropolitan_940gzzlupnr_940gzzlunha
+    North Harrow - Harrow-on-the-Hill:          lul-metropolitan_940gzzlunha_940gzzluhoh
+    Uxbridge - Hillingdon:                      lul-metropolitan_940gzzluuxb_940gzzluhgd
+    Hillingdon - Ickenham:                      lul-metropolitan_940gzzluhgd_940gzzluick
+    Ickenham - Ruislip:                         lul-metropolitan_940gzzluick_940gzzlursp
+    Ruislip - Ruislip Manor:                    lul-metropolitan_940gzzlursp_940gzzlursm
+    Ruislip Manor - Eastcote:                   lul-metropolitan_940gzzlursm_940gzzlueae
+    Eastcote - Rayners Lane:                    lul-metropolitan_940gzzlueae_940gzzluryl
+    West Harrow - Rayners Lane:                 lul-metropolitan_940gzzluryl_940gzzluwhw
+    West Harrow - Harrow-on-the-Hill:           lul-metropolitan_940gzzluwhw_940gzzluhoh
+    Harrow-on-the-Hill - Northwick Park:        lul-metropolitan_940gzzluhoh_940gzzlunkp
+    Northwick Park - Preston Road:              lul-metropolitan_940gzzlunkp_940gzzluprd
+    Preston Road - Wembley Park:                lul-metropolitan_940gzzluprd_940gzzluwyp
+    Wembley Park - Finchley Road:               lul-metropolitan_940gzzluwyp_940gzzlufyr
+    Finchley Road - Baker Street:               lul-metropolitan_940gzzlufyr_940gzzlubst
+    Great Portland Street - Baker Street:       lul-metropolitan_940gzzlubst_940gzzlugps
+    Great Portland Street - Euston Square:      lul-metropolitan_940gzzlugps_940gzzluesq
+    Euston Square - Kings Cross St. Pancras:    lul-metropolitan_940gzzluesq_940gzzluksx
+    Kings Cross St. Pancras - Farringdon:       lul-metropolitan_940gzzluksx_940gzzlufcn
+    Farringdon - Barbican:                      lul-metropolitan_940gzzlufcn_940gzzlubbn
+    Barbican - Moorgate:                        lul-metropolitan_940gzzlubbn_940gzzlumgt
+    Moorgate - Liverpool Street:                lul-metropolitan_940gzzlumgt_940gzzlulvt
+    Liverpool Street - Aldgate:                 lul-metropolitan_940gzzlulvt_940gzzluald        
+
+    
+
+
+    
+        
+

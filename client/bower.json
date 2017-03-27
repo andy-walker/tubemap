@@ -1,0 +1,22 @@
+{
+  "name": "tubemap-client",
+  "homepage": "https://github.com/andy-walker/tubemap",
+  "authors": [
+    "Andrew Walker <andyw+github2@circle-interactive.co.uk>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "raphael": "^2.2.7",
+    "jquery": "^3.2.1"
+  }
+}
