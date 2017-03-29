@@ -41,17 +41,6 @@ class TubemapServer {
 
         coroutine(function*() {
 
-            // generate animation paths, if required
-            if ('initPaths' in app.params && app.params.initPaths) {
-                
-                log.info('Generating paths ...');
-                
-                var PathGenerator  = require('./server/utils/pathGenerator');
-                var paths          = new PathGenerator();
-                app.animationPaths = yield paths.generate();
-
-            }
-
             yield app.dataConnector.start();
             yield app.webserver.start();
 
@@ -64,8 +53,5 @@ class TubemapServer {
 
 }
 
-global.app = new TubemapServer({
-    initPaths: false
-});
-
+global.app = new TubemapServer();
 app.start();
