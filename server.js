@@ -44,7 +44,7 @@ class TubemapServer {
             yield app.dataConnector.start();
             yield app.webserver.start();
 
-            app.scheduler.addJob('*/1 * * * * *', app.dataManager.runNextJob);
+            app.scheduler.addJob('* * * * * *', app.dataManager.runNextJob);
 
 
         })().catch(log.error);
