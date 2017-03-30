@@ -46,7 +46,6 @@ class TubemapServer {
 
             app.scheduler.addJob('* * * * * *', app.dataManager.runNextJob);
 
-
         })().catch(log.error);
 
     }

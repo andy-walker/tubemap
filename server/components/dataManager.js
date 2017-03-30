@@ -12,7 +12,7 @@ class DataManager {
         
         // alias data connector cache
         this.cache = app.dataConnector.cache;
-        this.lines = ['metropolitan', 'piccadilly', 'central', 'district', 'bakerloo', 'victoria', 'jubilee', 'northern'];
+        this.lines = ['metropolitan', 'piccadilly', 'central', 'district', 'bakerloo', 'victoria', 'jubilee', 'northern', 'circle', 'hammersmith-city'];
 
     }
 

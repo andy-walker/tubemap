@@ -161,7 +161,17 @@ var PathFinder = function() {
             };
         }
 
-        selector = 'g#s-' + naptanId.toLowerCase() + '_1_ > path';
+        selector += '_1_';
+
+
+        if ($(selector).length) {
+            return {
+                x: $(selector).attr('x'),
+                y: $(selector).attr('y')
+            };
+        }
+
+        selector = 'g#s-' + naptanId.toLowerCase() + '_1_ path';
 
         if ($(selector).length) {
             var point = component.getPathOrigin($(selector).attr('d'));
@@ -170,6 +180,18 @@ var PathFinder = function() {
                 y: point.y
             };
         }
+
+        selector = 'g[id$=' + naptanId.toLowerCase() + '_1_] path';
+
+        if ($(selector).length) {
+            var point = component.getPathOrigin($(selector).attr('d'));
+            return {
+                x: point.x,
+                y: point.y
+            };
+        }
+
+        console.log('Failed on ' + lineId + ' ' + naptanId.toLowerCase());
 
     };
 
@@ -360,6 +382,10 @@ socket.on('update', function(result) {
                     */
 
                     var animation = pathFinder.getPath(lineId, vehicle.from, vehicle.to);
+
+                    if (!animation)
+                        break;
+
                     var vehiclePath = raphael.path(animation.path).attr({ stroke: 'none', fill: 'none'});
 
                     vehicle.path = routeElement.element.attr('id');
