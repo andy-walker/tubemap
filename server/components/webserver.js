@@ -23,7 +23,8 @@ class Webserver {
     broadcastUpdate(lineId) {
 
         var clientData = app.dataManager.getUpdate(lineId);
-        console.log(clientData);
+        if (lineId == 'central' || lineId == 'victoria')
+            console.log(clientData);
         io.emit('update', {
             'line': lineId,
             'data': clientData

@@ -24,7 +24,11 @@ class DataConnector {
         var uniqueVehicleIds = {};
 
         for (let arrival of arrivals) {
-            
+
+            if (lineId == 'dlr') {
+                //console.log(JSON.stringify(arrival, null, 2));
+            }
+                
             let vehicleId = arrival.vehicleId;
             uniqueVehicleIds[vehicleId] = null;
             
@@ -91,9 +95,9 @@ class DataConnector {
 
             // check if location matches 'At ${arrivals[0].stationName}' - move first item to atStation if so
             let location    = cache[vehicleId].location;
-            let nextStation = cache[vehicleId].arrivals[0].stationName.replace(' Underground Station', '');
+            let nextStation = cache[vehicleId].arrivals[0].stationName.replace(/ (Underground|DLR) Station/, '');
 
-            if (location.match(new RegExp(`^At ${nextStation} Platform.*$`))) {
+            if (location.match(new RegExp(`^At ${nextStation} Platform.*$`)) || location.match(new RegExp(`^At ${nextStation}$`))) {
                 
                 cache[vehicleId].atStation = cache[vehicleId].arrivals.shift();
             
@@ -101,8 +105,8 @@ class DataConnector {
             // move contents of atStation to lastDeparted, mark departed time as now, and clear atStation
             } else if ('stationName' in cache[vehicleId].atStation) {
 
-                let nextStation = cache[vehicleId].atStation.stationName.replace(' Underground Station', '');
-                if (!location.match(new RegExp(`^At ${nextStation} Platform.*$`))) {
+                let nextStation = cache[vehicleId].atStation.stationName.replace(/ (Underground|DLR) Station/, '');
+                if (!location.match(new RegExp(`^At ${nextStation} Platform.*$`)) && !location.match(new RegExp(`^At ${nextStation}$`))) {
                     cache[vehicleId].lastDeparted = JSON.parse(JSON.stringify(cache[vehicleId].atStation));
                     cache[vehicleId].lastDeparted.departed = moment().format();
                     delete cache[vehicleId].lastDeparted.timeToStation;
@@ -118,10 +122,13 @@ class DataConnector {
             if (!(vehicleId in uniqueVehicleIds))
                 delete cache[vehicleId];
 
-
-        //console.log("\nNew cache:");
-        //console.log(JSON.stringify(this.cache, null, 2));
-        //console.log('Time now:', moment().format());
+        /*
+        if (lineId == 'central' || lineId == 'victoria') {
+            console.log("\nNew cache:");
+            console.log(JSON.stringify(this.cache[lineId], null, 2));
+            console.log('Time now:', moment().format());
+        }
+        */
 
 
 
@@ -141,8 +148,15 @@ class DataConnector {
                     } catch (e) {
                         app.log.error(e.message);
                     }
+                    /*
+                    if (lineId == 'central' || lineId == 'victoria') {
+                        console.log(lineId + ' success!');
+                        console.log(JSON.stringify(json, null, 2));
+                    }
+                    */
                     success(json);
                 } else {
+                    console.error(error);
                     failure(error);
                 }
             });
